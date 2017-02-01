@@ -1,26 +1,112 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uDC-Jy-1d6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="R7m-ZH-2kl">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController id="uDC-Jy-1d6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kcY-Rq-4CS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OcI-g4-fcr" kind="relationship" relationship="rootViewController" id="ZhP-qP-9TK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8cf-XS-ovM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-929" y="73"/>
+        </scene>
+        <!--Music Finder-->
+        <scene sceneID="3zh-Ni-3In">
+            <objects>
+                <tableViewController id="OcI-g4-fcr" customClass="TableViewController" customModule="SpotifyAPIApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" id="YL2-wp-BAU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="n9g-RG-4wt">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="87" id="DbN-TK-MwN" customClass="SongCell" customModule="SpotifyAPIApp">
+                                <rect key="frame" x="0.0" y="72" width="375" height="87"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DbN-TK-MwN" id="zNY-V4-GnE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xQd-b7-D4z">
+                                            <rect key="frame" x="8" y="8" width="70" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="xQd-b7-D4z" secondAttribute="height" multiplier="1:1" id="6Rs-08-aai"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nJ-h0-JaO">
+                                            <rect key="frame" x="17" y="17" width="52" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="0nJ-h0-JaO" secondAttribute="height" multiplier="1:1" id="Gqj-cH-sbI"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="rsz_1play_button.png"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="DbN-TK-MwN" eventType="touchUpInside" id="OcF-hB-Z4b"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9E-cM-dBy">
+                                            <rect key="frame" x="86" y="31.5" width="281" height="24"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="SongTitleLabel"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0nJ-h0-JaO" secondAttribute="bottom" constant="9" id="71x-ut-OPt"/>
+                                        <constraint firstItem="C9E-cM-dBy" firstAttribute="centerY" secondItem="zNY-V4-GnE" secondAttribute="centerY" id="DT2-Pg-cha"/>
+                                        <constraint firstItem="C9E-cM-dBy" firstAttribute="leading" secondItem="xQd-b7-D4z" secondAttribute="trailing" constant="8" id="FDL-XC-wXj"/>
+                                        <constraint firstItem="0nJ-h0-JaO" firstAttribute="top" secondItem="zNY-V4-GnE" secondAttribute="topMargin" constant="9" id="O7M-Wl-tC4"/>
+                                        <constraint firstItem="0nJ-h0-JaO" firstAttribute="leading" secondItem="zNY-V4-GnE" secondAttribute="leadingMargin" constant="9" id="Zzd-cD-cxG"/>
+                                        <constraint firstItem="xQd-b7-D4z" firstAttribute="leading" secondItem="zNY-V4-GnE" secondAttribute="leadingMargin" id="fsx-2f-gB4"/>
+                                        <constraint firstItem="xQd-b7-D4z" firstAttribute="bottom" secondItem="zNY-V4-GnE" secondAttribute="bottomMargin" id="snq-yf-etu"/>
+                                        <constraint firstItem="xQd-b7-D4z" firstAttribute="top" secondItem="zNY-V4-GnE" secondAttribute="topMargin" id="viQ-3j-lhB"/>
+                                        <constraint firstItem="C9E-cM-dBy" firstAttribute="trailing" secondItem="zNY-V4-GnE" secondAttribute="trailingMargin" id="z2g-U5-SV8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="albumImageView" destination="xQd-b7-D4z" id="3X0-Vf-2e9"/>
+                                    <outlet property="playStopButton" destination="0nJ-h0-JaO" id="6Nr-HV-tHS"/>
+                                    <outlet property="songTitleLabel" destination="C9E-cM-dBy" id="8EG-jD-PjF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OcI-g4-fcr" id="7kC-28-fY0"/>
+                            <outlet property="delegate" destination="OcI-g4-fcr" id="Zw5-6I-DUh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Music Finder" id="LgP-ig-S7n"/>
+                    <connections>
+                        <outlet property="searchBar" destination="n9g-RG-4wt" id="OeC-yP-0Da"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IxY-lR-hJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="85.599999999999994" y="73.313343328335833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rsz_1play_button.png" width="70" height="70"/>
+    </resources>
 </document>
