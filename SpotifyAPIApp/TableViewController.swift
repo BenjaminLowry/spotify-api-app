@@ -27,15 +27,19 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     //our URL string that we are searching for
     var searchURL = String()
     
+    //called when our app loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         //setting the search bar's delegate to this view controller
         searchBar.delegate = self
     }
     
+    //called when our user presses "search"
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        //reset our song list
+        songs = [SongItem]()
         
         //the text received from our search bar
         let searchText = searchBar.text!
